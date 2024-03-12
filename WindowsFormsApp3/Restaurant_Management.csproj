@@ -136,6 +136,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\FoodLoginIcon.png" />
     <None Include="Resources\icons8-line-chart-24.png" />
     <None Include="Resources\icons8-categorize-64 %281%29.png" />
     <None Include="Resources\icons8-process-lists-66 %281%29.png" />
