@@ -71,6 +71,9 @@
       <DependentUpon>RestaurantModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Services\CustomerRepository.cs" />
+    <Compile Include="Users.cs">
+      <DependentUpon>RestaurantModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="RestaurantModel.edmx">

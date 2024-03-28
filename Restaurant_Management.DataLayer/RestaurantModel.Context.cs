@@ -26,5 +26,6 @@ namespace Restaurant_Management.DataLayer
         }
     
         public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }
