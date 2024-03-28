@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp3.Models
+namespace Restaurant_Management.DataLayer
 {
     using System;
     using System.Data.Entity;
@@ -25,6 +25,6 @@ namespace WindowsFormsApp3.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Customers> Customers { get; set; }
     }
 }

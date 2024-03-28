@@ -7,16 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp3.Models
+namespace Restaurant_Management.DataLayer
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Customers
     {
-        public int UserID { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public System.DateTime CreationDate { get; set; }
+        public int CustomerID { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerLastname { get; set; }
+        public string MobileNumber { get; set; }
+        public string Address { get; set; }
+        public string PostalCode { get; set; }
     }
 }
