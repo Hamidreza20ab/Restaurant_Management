@@ -177,6 +177,7 @@
             this.btnKitchen.TabIndex = 2;
             this.btnKitchen.Text = "آشپزخانه";
             this.btnKitchen.UseVisualStyleBackColor = false;
+            this.btnKitchen.Click += new System.EventHandler(this.btnKitchen_Click);
             // 
             // pnOrders
             // 
@@ -201,6 +202,7 @@
             this.btnOrders.TabIndex = 2;
             this.btnOrders.Text = "سفارش گیری";
             this.btnOrders.UseVisualStyleBackColor = false;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // pnEmployees
             // 
@@ -225,6 +227,7 @@
             this.btnEmployees.TabIndex = 2;
             this.btnEmployees.Text = "کارکنان";
             this.btnEmployees.UseVisualStyleBackColor = false;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // pnTables
             // 
@@ -249,6 +252,7 @@
             this.btnTables.TabIndex = 2;
             this.btnTables.Text = "میز ها";
             this.btnTables.UseVisualStyleBackColor = false;
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // pnFoods
             // 
@@ -273,6 +277,7 @@
             this.btnFoods.TabIndex = 2;
             this.btnFoods.Text = "لیست غذا ها";
             this.btnFoods.UseVisualStyleBackColor = false;
+            this.btnFoods.Click += new System.EventHandler(this.btnFoods_Click);
             // 
             // pnCategories
             // 
@@ -297,6 +302,7 @@
             this.btnCategories.TabIndex = 2;
             this.btnCategories.Text = "دسته بندی غذا ها";
             this.btnCategories.UseVisualStyleBackColor = false;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // pnDashboard
             // 
@@ -353,7 +359,11 @@
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
