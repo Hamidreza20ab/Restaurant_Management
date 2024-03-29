@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant_Management.DataLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace WindowsFormsApp3.Forms
         public frmCategories()
         {
             InitializeComponent();
+        }
+
+        private void frmCategories_Load(object sender, EventArgs e)
+        {
+            RS_Model db = new RS_Model();
+            
+            guna2DataGridView1.DataSource = db.Categories.ToList();
+            guna2DataGridView1.AutoGenerateColumns=false;
+            guna2DataGridView1.Columns["Foods"].Visible=false;
         }
     }
 }

@@ -133,6 +133,16 @@ namespace WindowsFormsApp3.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_pen_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pen-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_person_64__2_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-person-64 (2)", resourceCulture);
@@ -156,6 +166,16 @@ namespace WindowsFormsApp3.Properties {
         internal static System.Drawing.Bitmap icons8_table_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-table-26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_trash_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-trash-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
