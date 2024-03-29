@@ -4,25 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using System.Data.Entity;
 using Restaurant_Management.DataLayer.Models;
 
 
-
 namespace Restaurant_Management.DataLayer.Services
 {
-    public class CustomerRepository : ICustomerRepository
-
+    internal class UserRepository : IUserRepository
     {
         RS_Model db;
-        
-
-        public bool DeleteCustomer(Customers customer)
+        public bool DeleteUser(Users user)
         {
-
             try
             {
-                db.Entry(customer).State = EntityState.Deleted;
+                db.Entry(user).State = EntityState.Deleted;
                 return true;
             }
             catch
@@ -31,30 +27,30 @@ namespace Restaurant_Management.DataLayer.Services
             }
         }
 
-        public bool DeleteCustomer(int customerId)
+        public bool DeleteUser(int userId)
         {
             try
             {
-                var customer = GetCustomersById(customerId);
-                DeleteCustomer(customer);
+                var user = GetUserById(userId);
+                DeleteUser(user);
                 return true;
             }
-            catch
+            catch 
             {
                 return false;
             }
         }
 
-        public Customers GetCustomersById(int customerId)
+        public Users GetUserById(int userId)
         {
-            return db.Customers.Find(customerId);
+            return db.Users.Find(userId);
         }
 
-        public bool InsertCustomer(Customers customer)
+        public bool InsertUser(Users user)
         {
             try
             {
-                db.Customers.Add(customer);
+                db.Users.Add(user);
                 return true;
             }
             catch
@@ -69,16 +65,16 @@ namespace Restaurant_Management.DataLayer.Services
             db.SaveChanges();
         }
 
-        public List<Customers> SelectAllCustomers()
+        public List<Users> SelectAllUsers()
         {
-            return db.Customers.ToList();
+            return db.Users.ToList();
         }
 
-        public bool UpdateCustomer(Customers customer)
+        public bool UpdateUser(Users user)
         {
             try
             {
-                 db.Entry(customer).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 return true;
             }
             catch

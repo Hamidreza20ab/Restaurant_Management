@@ -116,5 +116,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Restaurant_Management.DataLayer\Restaurant_Management.DataLayer.csproj">
+      <Project>{74d22dc1-8673-4e94-a512-24149d9c81ef}</Project>
+      <Name>Restaurant_Management.DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

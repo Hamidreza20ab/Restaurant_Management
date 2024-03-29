@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using Restaurant_Management.DataLayer.Models;
+
 using System.Threading.Tasks;
 
 namespace Restaurant_Management.DataLayer.Repositories

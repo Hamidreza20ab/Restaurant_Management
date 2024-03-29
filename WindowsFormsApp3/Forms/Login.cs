@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Restaurant_Management.DataLayer;
+using Restaurant_Management.DataLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace WindowsFormsApp3.Forms
 {
@@ -19,12 +22,12 @@ namespace WindowsFormsApp3.Forms
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLogin_MouseEnter(object sender, EventArgs e)
         {
-            btnLogin.BackColor= Color.DarkBlue;
+            btnLogin.BackColor = Color.DarkBlue;
         }
 
         private void btnLogin_MouseLeave(object sender, EventArgs e)
@@ -34,9 +37,26 @@ namespace WindowsFormsApp3.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 frm = new Form1();
-            frm.Show();
+            RS_Model db = new RS_Model();
+            if (string.IsNullOrEmpty(txtUserName.Text) || string.IsNullOrEmpty(txtPass.Text))
+            {
+                MessageBox.Show("لطفا نام کاربری یا رمز عبور را وارد کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                if (db.Users.Any(u => u.UserName == txtUserName.Text && u.Password == txtPass.Text))
+            {
+                this.Hide();
+                Form1 frm = new Form1();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("نام کاربری یا کلمه عبور اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            db.Dispose();
+
+
         }
 
         private void LoginShowPassword_CheckedChanged(object sender, EventArgs e)
