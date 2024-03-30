@@ -25,14 +25,21 @@ namespace WindowsFormsApp3.Forms
             guna2DataGridView1.DataSource = cat.GetAll();
             guna2DataGridView1.AutoGenerateColumns=false;
             guna2DataGridView1.Columns["Foods"].Visible=false;
-            cat.Dispose();
+            
             
         }
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {RS_Model rs = new RS_Model();
             guna2DataGridView1.DataSource = (rs.Categories.Where(item => item.CategoryName.Contains(txtSearchBox.Text)).ToList());
-            rs.Dispose();
+            cat.GetAll();
+            
+        }
+
+        private void pcNewCategory_Click(object sender, EventArgs e)
+        {
+            FrmAddCategory frm = new FrmAddCategory();
+            frm.ShowDialog();
             
         }
     }
