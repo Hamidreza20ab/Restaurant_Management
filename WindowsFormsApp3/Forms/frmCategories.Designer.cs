@@ -33,20 +33,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtSearchBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pcNewCategory = new System.Windows.Forms.PictureBox();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcNewCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 36F);
-            this.label1.Location = new System.Drawing.Point(382, 9);
+            this.label1.Location = new System.Drawing.Point(392, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(247, 58);
             this.label1.TabIndex = 0;
@@ -60,9 +63,9 @@
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Vazirmatn", 8.25F);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Vazirmatn", 9F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(35)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
@@ -82,11 +85,11 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(-2, 96);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(0, 96);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1035, 556);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1033, 556);
             this.guna2DataGridView1.TabIndex = 1;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -109,6 +112,24 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // dgvNo
+            // 
+            this.dgvNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvNo.DataPropertyName = "CategoryID";
+            this.dgvNo.FillWeight = 70F;
+            this.dgvNo.HeaderText = "شماره دسته بندی";
+            this.dgvNo.MinimumWidth = 70;
+            this.dgvNo.Name = "dgvNo";
+            this.dgvNo.ReadOnly = true;
+            this.dgvNo.Width = 70;
+            // 
+            // dgvName
+            // 
+            this.dgvName.DataPropertyName = "CategoryName";
+            this.dgvName.HeaderText = "نام دسته بندی";
+            this.dgvName.Name = "dgvName";
+            this.dgvName.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -134,23 +155,38 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // dgvNo
+            // txtSearchBox
             // 
-            this.dgvNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvNo.DataPropertyName = "CategoryID";
-            this.dgvNo.FillWeight = 70F;
-            this.dgvNo.HeaderText = "شماره دسته بندی";
-            this.dgvNo.MinimumWidth = 70;
-            this.dgvNo.Name = "dgvNo";
-            this.dgvNo.ReadOnly = true;
-            this.dgvNo.Width = 70;
+            this.txtSearchBox.BackColor = System.Drawing.Color.White;
+            this.txtSearchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchBox.DefaultText = "";
+            this.txtSearchBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearchBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearchBox.IconRight = global::WindowsFormsApp3.Properties.Resources.icons8_search_30;
+            this.txtSearchBox.Location = new System.Drawing.Point(759, 31);
+            this.txtSearchBox.Name = "txtSearchBox";
+            this.txtSearchBox.PasswordChar = '\0';
+            this.txtSearchBox.PlaceholderText = "";
+            this.txtSearchBox.SelectedText = "";
+            this.txtSearchBox.Size = new System.Drawing.Size(244, 36);
+            this.txtSearchBox.TabIndex = 3;
+            this.txtSearchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSearchBox.TextChanged += new System.EventHandler(this.txtSearchBox_TextChanged);
             // 
-            // dgvName
+            // pcNewCategory
             // 
-            this.dgvName.DataPropertyName = "CategoryName";
-            this.dgvName.HeaderText = "نام دسته بندی";
-            this.dgvName.Name = "dgvName";
-            this.dgvName.ReadOnly = true;
+            this.pcNewCategory.Image = global::WindowsFormsApp3.Properties.Resources.icons8_plus_64;
+            this.pcNewCategory.Location = new System.Drawing.Point(54, 16);
+            this.pcNewCategory.Name = "pcNewCategory";
+            this.pcNewCategory.Size = new System.Drawing.Size(56, 51);
+            this.pcNewCategory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcNewCategory.TabIndex = 2;
+            this.pcNewCategory.TabStop = false;
             // 
             // dgvEdit
             // 
@@ -181,6 +217,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 652);
+            this.Controls.Add(this.txtSearchBox);
+            this.Controls.Add(this.pcNewCategory);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -189,6 +227,7 @@
             this.Text = "frmCategories";
             this.Load += new System.EventHandler(this.frmCategories_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcNewCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +243,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvName;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDelete;
+        private System.Windows.Forms.PictureBox pcNewCategory;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearchBox;
     }
 }

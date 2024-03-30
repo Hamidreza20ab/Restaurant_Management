@@ -22,6 +22,7 @@ namespace Restaurant_Management.DataLayer.Repositories
             _context = new RS_Model();
             _dbset = _context.Set<T>();
         }
+        
 
         public virtual List<T> GetAll()
         {
@@ -61,7 +62,7 @@ namespace Restaurant_Management.DataLayer.Repositories
                 Delete(entity);
             }
         }
-
+        
         public virtual void Save()
         {
             _context.SaveChanges();

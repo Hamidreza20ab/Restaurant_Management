@@ -14,6 +14,7 @@ namespace WindowsFormsApp3.Forms
 {
     public partial class frmCategories : Form
     {
+        RepositoryCRUD<Categories> cat = new RepositoryCRUD<Categories>();
         public frmCategories()
         {
             InitializeComponent();
@@ -21,12 +22,17 @@ namespace WindowsFormsApp3.Forms
 
         private void frmCategories_Load(object sender, EventArgs e)
         {
-            
-            RepositoryCRUD<Categories> cat = new RepositoryCRUD<Categories>();
             guna2DataGridView1.DataSource = cat.GetAll();
             guna2DataGridView1.AutoGenerateColumns=false;
             guna2DataGridView1.Columns["Foods"].Visible=false;
             cat.Dispose();
+            
+        }
+
+        private void txtSearchBox_TextChanged(object sender, EventArgs e)
+        {RS_Model rs = new RS_Model();
+            guna2DataGridView1.DataSource = (rs.Categories.Where(item => item.CategoryName.Contains(txtSearchBox.Text)).ToList());
+            rs.Dispose();
             
         }
     }
