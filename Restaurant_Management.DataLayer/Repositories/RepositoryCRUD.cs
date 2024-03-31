@@ -54,7 +54,7 @@ namespace Restaurant_Management.DataLayer.Repositories
             _dbset.Remove(entity);
         }
 
-        public virtual void Delete(object id)
+        public virtual void DeleteById(object id)
         {
             var entity = GetById(id);
             if (entity != null)

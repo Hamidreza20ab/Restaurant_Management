@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,23 +14,71 @@ using System.Windows.Forms;
 namespace WindowsFormsApp3.Forms
 {
     public partial class FrmAddCategory : Form
-    {
+    {   RepositoryCRUD<Categories> cat = new RepositoryCRUD<Categories>();
+        RS_Model rs = new RS_Model();
+        public int categoryId = 0;
+
         public FrmAddCategory()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
-        { 
-            RepositoryCRUD<Categories> cat = new RepositoryCRUD<Categories>();
-            var Name = txtName.Text;
-            var category = new Categories();
-            category.CategoryName = Name;
+        {
+            Categories categories = new Categories()
+            {
+                CategoryName = txtName.Text,
+            };
+
+            if (categoryId == 0)
+            {
+                cat.Insert(categories);
+            }
+            else
+            {
+                var existingCategory = cat.GetById(categoryId); 
+                if (existingCategory != null)
+                {
+                    
+                    existingCategory.CategoryName = categories.CategoryName;
+
+                 
+                    cat.Update(existingCategory);
+                }
+            }
+
             
-            cat.Insert(category);
             cat.Save();
-            this.Close();
+
             
+            this.Close();
+
+           
+            DialogResult = DialogResult.OK;
+            
+
+        }
+
+        private void FrmAddCategory_Load(object sender, EventArgs e)
+        {
+            
+            if (categoryId != 0)
+            {
+                lblTitle.Text = "ویرایش دسته بندی";
+                btnSubmit.Text = "ویرایش";
+                using (RS_Model rs = new RS_Model())
+                {
+                    var category = cat.GetById(categoryId);
+                    txtName.Text = category.CategoryName;
+                }
+
+            }
+        }
+
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

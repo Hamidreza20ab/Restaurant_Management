@@ -23,24 +23,79 @@ namespace WindowsFormsApp3.Forms
         private void frmCategories_Load(object sender, EventArgs e)
         {
             guna2DataGridView1.DataSource = cat.GetAll();
-            guna2DataGridView1.AutoGenerateColumns=false;
-            guna2DataGridView1.Columns["Foods"].Visible=false;
-            
-            
+            guna2DataGridView1.AutoGenerateColumns = false;
+            guna2DataGridView1.Columns["Foods"].Visible = false;
+
         }
 
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
-        {RS_Model rs = new RS_Model();
+        {
+            RS_Model rs = new RS_Model();
             guna2DataGridView1.DataSource = (rs.Categories.Where(item => item.CategoryName.Contains(txtSearchBox.Text)).ToList());
             cat.GetAll();
-            
+
         }
 
         private void pcNewCategory_Click(object sender, EventArgs e)
         {
             FrmAddCategory frm = new FrmAddCategory();
             frm.ShowDialog();
-            
+
         }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvEdit")
+            {
+
+
+
+                if (guna2DataGridView1.CurrentRow != null)
+                {
+
+                    int categoryId = int.Parse(guna2DataGridView1.CurrentRow.Cells["dgvID"].Value.ToString());
+                    FrmAddCategory frmAdd = new FrmAddCategory();
+                    frmAdd.categoryId = categoryId;
+                    if (frmAdd.ShowDialog() == DialogResult.OK)
+                    {
+                        cat.GetAll();
+                        
+                    }
+
+
+                }
+
+
+            }
+            if (guna2DataGridView1.CurrentCell.OwningColumn.Name == "dgvDelete")
+            {
+                if (guna2DataGridView1.CurrentRow != null)
+                {
+                    string name = Convert.ToString(guna2DataGridView1.CurrentRow.Cells["dgvName"].Value);
+                    int categoryId = int.Parse(guna2DataGridView1.CurrentRow.Cells["dgvID"].Value.ToString());
+                    var existingCategory = cat.GetById(categoryId);
+                    if (MessageBox.Show($"آیا از حذف {name} مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        cat.DeleteById(categoryId);
+                        cat.Save();
+                    }
+                    else
+                    {
+                        MessageBox.Show("لطفا یک دسته بندی را انتخاب کنید", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
+        }
+
+        private void pcRefresh_Click(object sender, EventArgs e)
+        {
+            
+           guna2DataGridView1.DataSource= cat.GetAll();
+        }
+        
     }
 }
+
+
+
