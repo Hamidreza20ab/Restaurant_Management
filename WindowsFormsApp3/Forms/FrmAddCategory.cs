@@ -15,7 +15,7 @@ namespace WindowsFormsApp3.Forms
 {
     public partial class FrmAddCategory : Form
     {   RepositoryCRUD<Categories> cat = new RepositoryCRUD<Categories>();
-        RS_Model rs = new RS_Model();
+       
         public int categoryId = 0;
 
         public FrmAddCategory()

@@ -33,13 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pcRefresh = new System.Windows.Forms.PictureBox();
             this.txtSearchBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.pcNewCategory = new System.Windows.Forms.PictureBox();
+            this.dgvNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -74,6 +75,7 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 45;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvNo,
             this.dgvID,
             this.dgvName,
             this.dgvEdit,
@@ -86,12 +88,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.guna2DataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(0, 96);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1033, 556);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1032, 556);
             this.guna2DataGridView1.TabIndex = 1;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -115,24 +118,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
-            // 
-            // dgvID
-            // 
-            this.dgvID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvID.DataPropertyName = "CategoryID";
-            this.dgvID.FillWeight = 70F;
-            this.dgvID.HeaderText = "شماره دسته بندی";
-            this.dgvID.MinimumWidth = 70;
-            this.dgvID.Name = "dgvID";
-            this.dgvID.ReadOnly = true;
-            this.dgvID.Width = 70;
-            // 
-            // dgvName
-            // 
-            this.dgvName.DataPropertyName = "CategoryName";
-            this.dgvName.HeaderText = "نام دسته بندی";
-            this.dgvName.Name = "dgvName";
-            this.dgvName.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -203,6 +188,33 @@
             this.pcNewCategory.TabStop = false;
             this.pcNewCategory.Click += new System.EventHandler(this.pcNewCategory_Click);
             // 
+            // dgvNo
+            // 
+            this.dgvNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvNo.HeaderText = "";
+            this.dgvNo.MinimumWidth = 70;
+            this.dgvNo.Name = "dgvNo";
+            this.dgvNo.ReadOnly = true;
+            this.dgvNo.Width = 70;
+            // 
+            // dgvID
+            // 
+            this.dgvID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvID.DataPropertyName = "CategoryID";
+            this.dgvID.FillWeight = 70F;
+            this.dgvID.HeaderText = "شماره دسته بندی";
+            this.dgvID.MinimumWidth = 70;
+            this.dgvID.Name = "dgvID";
+            this.dgvID.ReadOnly = true;
+            this.dgvID.Width = 70;
+            // 
+            // dgvName
+            // 
+            this.dgvName.DataPropertyName = "CategoryName";
+            this.dgvName.HeaderText = "نام دسته بندی";
+            this.dgvName.Name = "dgvName";
+            this.dgvName.ReadOnly = true;
+            // 
             // dgvEdit
             // 
             this.dgvEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -229,8 +241,7 @@
             // 
             // frmCategories
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1032, 652);
             this.Controls.Add(this.pcRefresh);
             this.Controls.Add(this.txtSearchBox);
@@ -258,10 +269,11 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.PictureBox pcNewCategory;
         private Guna.UI2.WinForms.Guna2TextBox txtSearchBox;
+        private System.Windows.Forms.PictureBox pcRefresh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvName;
         private System.Windows.Forms.DataGridViewImageColumn dgvEdit;
         private System.Windows.Forms.DataGridViewImageColumn dgvDelete;
-        private System.Windows.Forms.PictureBox pcRefresh;
     }
 }

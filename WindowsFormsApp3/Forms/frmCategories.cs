@@ -17,6 +17,7 @@ namespace WindowsFormsApp3.Forms
         RepositoryCRUD<Categories> cat = new RepositoryCRUD<Categories>();
         public frmCategories()
         {
+            
             InitializeComponent();
         }
 
@@ -25,6 +26,7 @@ namespace WindowsFormsApp3.Forms
             guna2DataGridView1.DataSource = cat.GetAll();
             guna2DataGridView1.AutoGenerateColumns = false;
             guna2DataGridView1.Columns["Foods"].Visible = false;
+            
 
         }
 
@@ -92,6 +94,8 @@ namespace WindowsFormsApp3.Forms
         {
             
            guna2DataGridView1.DataSource= cat.GetAll();
+           
+            
         }
         
     }
