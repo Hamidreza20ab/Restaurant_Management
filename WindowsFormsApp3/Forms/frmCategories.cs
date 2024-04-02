@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -54,7 +55,7 @@ namespace WindowsFormsApp3.Forms
 
                 if (guna2DataGridView1.CurrentRow != null)
                 {
-
+                    
                     int categoryId = int.Parse(guna2DataGridView1.CurrentRow.Cells["dgvID"].Value.ToString());
                     FrmAddCategory frmAdd = new FrmAddCategory();
                     frmAdd.categoryId = categoryId;
@@ -80,6 +81,7 @@ namespace WindowsFormsApp3.Forms
                     {
                         cat.DeleteById(categoryId);
                         cat.Save();
+                        LoadData();
                     }
                     else
                     {
@@ -89,11 +91,15 @@ namespace WindowsFormsApp3.Forms
                 }
             }
         }
-
+        private void LoadData()
+        {
+            var data = cat.GetAll();
+            guna2DataGridView1.DataSource = data;
+        }
         private void pcRefresh_Click(object sender, EventArgs e)
         {
             
-           guna2DataGridView1.DataSource= cat.GetAll();
+           LoadData();
            
             
         }

@@ -73,5 +73,11 @@ namespace WindowsFormsApp3.Forms
 
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

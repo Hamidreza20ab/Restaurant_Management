@@ -36,6 +36,7 @@
             this.chkStatus = new System.Windows.Forms.CheckBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtSize = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSize)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(35)))));
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -95,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Vazirmatn", 10F);
-            this.label1.Location = new System.Drawing.Point(279, 196);
+            this.label1.Location = new System.Drawing.Point(258, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 24);
             this.label1.TabIndex = 7;
@@ -126,10 +128,22 @@
             // 
             // txtSize
             // 
-            this.txtSize.Location = new System.Drawing.Point(200, 195);
+            this.txtSize.Location = new System.Drawing.Point(173, 196);
             this.txtSize.Name = "txtSize";
             this.txtSize.Size = new System.Drawing.Size(73, 25);
             this.txtSize.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Vazirmatn", 12F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 27);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "X";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // FrmAddTable
             // 
@@ -149,6 +163,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmAddTable";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmAddTable";
             this.Load += new System.EventHandler(this.FrmAddTable_Load);
             this.panel1.ResumeLayout(false);
@@ -169,5 +184,6 @@
         public System.Windows.Forms.CheckBox chkStatus;
         public System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.NumericUpDown txtSize;
+        public System.Windows.Forms.Label label2;
     }
 }

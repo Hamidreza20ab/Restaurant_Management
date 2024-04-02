@@ -137,6 +137,12 @@
     <Compile Include="Forms\frmTickets.Designer.cs">
       <DependentUpon>frmTickets.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmuser.Designer.cs">
+      <DependentUpon>frmuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTickets.resx">
       <DependentUpon>frmTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmuser.resx">
+      <DependentUpon>frmuser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

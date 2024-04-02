@@ -36,7 +36,7 @@ namespace WindowsFormsApp3.Forms
         private void txtSearchBox_TextChanged(object sender, EventArgs e)
         {
             RS_Model rs = new RS_Model();
-            dgvTables.DataSource = (rs.Categories.Where(item => item.CategoryName.Contains(txtSearchBox.Text)).ToList());
+            dgvTables.DataSource = (rs.Tables.Where(item => item.TableName.Contains(txtSearchBox.Text)).ToList());
             table.GetAll();
         }
 
