@@ -34,8 +34,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.chkStatus = new System.Windows.Forms.CheckBox();
-            this.txtSize = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.txtSize = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSize)).BeginInit();
             this.SuspendLayout();
@@ -111,16 +111,6 @@
             this.chkStatus.Text = "وضعیت میز";
             this.chkStatus.UseVisualStyleBackColor = true;
             // 
-            // txtSize
-            // 
-            this.txtSize.BackColor = System.Drawing.Color.Transparent;
-            this.txtSize.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSize.Location = new System.Drawing.Point(162, 184);
-            this.txtSize.Name = "txtSize";
-            this.txtSize.Size = new System.Drawing.Size(111, 36);
-            this.txtSize.TabIndex = 9;
-            // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(35)))));
@@ -134,14 +124,21 @@
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
+            // txtSize
+            // 
+            this.txtSize.Location = new System.Drawing.Point(200, 195);
+            this.txtSize.Name = "txtSize";
+            this.txtSize.Size = new System.Drawing.Size(73, 25);
+            this.txtSize.TabIndex = 11;
+            // 
             // FrmAddTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(332, 341);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtSize);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblName);
@@ -170,7 +167,7 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.CheckBox chkStatus;
-        public Guna.UI2.WinForms.Guna2NumericUpDown txtSize;
         public System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.NumericUpDown txtSize;
     }
 }
